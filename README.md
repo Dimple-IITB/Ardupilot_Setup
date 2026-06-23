@@ -107,3 +107,9 @@ microxrceddsgen -help
     ```
     mavproxy.py --console --map --aircraft test --master=:14550
     ```
+
+
+# NOTES
+LINKS: [ArduPilot](https://ardupilot.org/dev/docs/building-setup-linux.html), [ROS2](https://ardupilot.org/dev/docs/ros2-install.html#ros2-installation-ubuntu),[ROS2 with SITL](https://ardupilot.org/dev/docs/ros2-sitl.html)
+
+IMP: [Ardu-ROS](https://ardupilot.org/dev/docs/ros2.html#ros2)
