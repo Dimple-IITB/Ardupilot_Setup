@@ -58,7 +58,7 @@ microxrceddsgen -help
   colcon build --packages-up-to ardupilot_dds_tests
   ```
 
-##### ROS2 with SITL 
+##### ROS2 with SITL ()
 - Ardupilot dependencies
   ```
   cd ardu_ws/src/ardupilot
@@ -107,7 +107,38 @@ microxrceddsgen -help
     ```
     mavproxy.py --console --map --aircraft test --master=:14550
     ```
-
+# ROS2, Ardupilot and Gazebo [Tutorial link](https://ardupilot.org/dev/docs/ros2-gazebo.html#ros2-gazebo)
+- Installing [gazebo harmonic](https://gazebosim.org/docs/harmonic/install_ubuntu/)
+  Check <br/>
+  ```
+  gz sim --version
+  gz sim shapes.sdf
+  ```
+- Installing ros2 with gazebo
+  ```
+  cd ~/ardu_ws
+  vcs import --input https://raw.githubusercontent.com/ArduPilot/ardupilot_gz/main/ros2_gz.repos --recursive src
+  export GZ_VERSION=harmonic
+  sudo apt install wget
+  wget https://packages.osrfoundation.org/gazebo.gpg -O /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null
+  sudo apt update
+  sudo wget https://raw.githubusercontent.com/osrf/osrf-rosdep/master/gz/00-gazebo.list -O /etc/ros/rosdep/sources.list.d/00-gazebo.list
+  rosdep update
+  cd ~/ardu_ws
+  source /opt/ros/humble/setup.bash
+  sudo apt update
+  rosdep update
+  rosdep install --from-paths src --ignore-src -y
+  cd ~/ardu_ws
+  colcon build --packages-up-to ardupilot_gz_bringup
+  cd ~/ardu_ws
+  source install/setup.bash
+  colcon test --packages-select ardupilot_sitl ardupilot_dds_tests ardupilot_gazebo ardupilot_gz_applications ardupilot_gz_description ardupilot_gz_gazebo ardupilot_gz_bringup
+  colcon test-result --all --verbose
+  source install/setup.bash
+  ros2 launch ardupilot_gz_bringup iris_runway.launch.py
+  ```
 
 # NOTES
 LINKS: [ArduPilot](https://ardupilot.org/dev/docs/building-setup-linux.html), [ROS2](https://ardupilot.org/dev/docs/ros2-install.html#ros2-installation-ubuntu),[ROS2 with SITL](https://ardupilot.org/dev/docs/ros2-sitl.html)
