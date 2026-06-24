@@ -144,3 +144,9 @@ microxrceddsgen -help
 LINKS: [ArduPilot](https://ardupilot.org/dev/docs/building-setup-linux.html), [ROS2](https://ardupilot.org/dev/docs/ros2-install.html#ros2-installation-ubuntu),[ROS2 with SITL](https://ardupilot.org/dev/docs/ros2-sitl.html)
 
 IMP: [Ardu-ROS](https://ardupilot.org/dev/docs/ros2.html#ros2)
+
+# Installing QGC
+- [QGC install](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/download_and_install.html)
+- Use QGroundControl v5.0.8 - Stable
+  ```https://github.com/mavlink/qgroundcontrol/releases/```
+
