@@ -5,6 +5,17 @@ cd ardupilot <br/>
 Tools/environment_install/install-prereqs-ubuntu.sh -y <br/>
 . ~/.profile <br/>
 
+# Installing QGC
+- [QGC install](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/download_and_install.html)
+- Use QGroundControl v5.0.8 - Stable
+  ```https://github.com/mavlink/qgroundcontrol/releases/```
+
+# Run Ardupilot and QGC together 
+Terminal 1: cd ~/ardupilot/ArduCopter
+            sim_vehicle.py --console --map -w
+
+Terminal 2: ./QGroundControl-x86_64.AppImage
+
 # ROS2 with SITL
 - Check ros distro in terminal `printenv ROS_DISTRO`
 
@@ -145,8 +156,5 @@ LINKS: [ArduPilot](https://ardupilot.org/dev/docs/building-setup-linux.html), [R
 
 IMP: [Ardu-ROS](https://ardupilot.org/dev/docs/ros2.html#ros2)
 
-# Installing QGC
-- [QGC install](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/download_and_install.html)
-- Use QGroundControl v5.0.8 - Stable
-  ```https://github.com/mavlink/qgroundcontrol/releases/```
+
 
