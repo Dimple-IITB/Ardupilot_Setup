@@ -16,7 +16,7 @@ Terminal 1:
 cd ~/ardupilot/ArduCopter
 sim_vehicle.py --console --map -w
 ````
-Note: Use the above to check arducopter version as well
+Note: Use the above to check arducopter version as well <br/>
 Terminal 2: 
 ```
 ./QGroundControl-x86_64.AppImage
