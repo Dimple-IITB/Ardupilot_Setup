@@ -23,7 +23,7 @@ Terminal 2:
 
 Plan a path and make the drone move
 
-# ROS2 with SITL
+# [ROS2](https://ardupilot.org/dev/docs/ros2-install.html#ros2-installation-ubuntu) with SITL
 - Check ros distro in terminal `printenv ROS_DISTRO`
 
 #### MAKING WORKSPACE
