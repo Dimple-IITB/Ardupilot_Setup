@@ -16,7 +16,10 @@ Terminal 1:
 cd ~/ardupilot/ArduCopter
 sim_vehicle.py --console --map -w
 ````
-Terminal 2: ./QGroundControl-x86_64.AppImage
+Terminal 2: 
+```
+./QGroundControl-x86_64.AppImage
+```
 
 Plan a path and make the drone move
 
