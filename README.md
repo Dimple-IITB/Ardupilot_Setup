@@ -189,6 +189,29 @@ microxrceddsgen -help
   source install/setup.bash
   ros2 launch ardupilot_gz_bringup iris_runway.launch.py
   ```
+ ### Testing 
+ -  Note: Make sure the bashrc includes this
+ ```
+  source /opt/ros/humble/setup.bash
+  #source "/home/autopilot/ardupilot/Tools/completion/completion.bash"
+  export PATH=$PATH:/home/autopilot/ardu_ws/Micro-XRCE-DDS-Gen/scripts
+  source "/home/autopilot/ardu_ws/src/ardupilot/Tools/completion/completion.bash"
+  source /home/autopilot/ardu_ws/install/setup.bash
+  export GZ_VERSION=harmonic
+  export GZ_SIM_SYSTEM_PLUGIN_PATH=$HOME/ardupilot_gazebo/build:${GZ_SIM_SYSTEM_PLUGIN_PATH}
+  export GZ_SIM_RESOURCE_PATH=$HOME/ardupilot_gazebo/models:$HOME/ardupilot_gazebo/worlds:${GZ_SIM_RESOURCE_PATH}
+ ```
+  - Terminal 1:
+    ```
+    cd ~/ardu_ws/src
+    ros2 launch ardupilot_gz_bringup iris_runway.launch.py
+    ```
+   - Terminal 2:
+     ```
+     ./QGroundControl-x86_64.AppImage
+     ```
+   Put the path and read the ros2 topic to see everything is working alright
+
 
 # NOTES
 LINKS: [ArduPilot](https://ardupilot.org/dev/docs/building-setup-linux.html), [ROS2](https://ardupilot.org/dev/docs/ros2-install.html#ros2-installation-ubuntu),[ROS2 with SITL](https://ardupilot.org/dev/docs/ros2-sitl.html)
