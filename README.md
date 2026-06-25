@@ -136,26 +136,26 @@ microxrceddsgen -help
     ros2 topic echo /ap/geopose/filtered
      ```
 ### To test ros2, qgc and ardupilot together use this
-Terminal 1:
-```
-ros2 launch ardupilot_sitl sitl_dds_udp.launch.py \
-transport:=udp4 \
-synthetic_clock:=True \
-wipe:=False \
-model:=quad \
-speedup:=1 \
-slave:=0 \
-instance:=0 \
-defaults:=$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/default_params/copter.parm,$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/default_params/dds_udp.parm \
-sim_address:=127.0.0.1 \
-master:=tcp:127.0.0.1:5760 \
-sitl:=127.0.0.1:5501 \
-out:=127.0.0.1:14550 \
-console:=True \
-map:=True
-```
-Terminal 2: ```./QGroundControl-x86_64.AppImage```
-Terminal 3: Run this topic to see values are coming ```ros2 topic echo /ap/geopose/filtered```
+  Terminal 1:
+  ```
+  ros2 launch ardupilot_sitl sitl_dds_udp.launch.py \
+  transport:=udp4 \
+  synthetic_clock:=True \
+  wipe:=False \
+  model:=quad \
+  speedup:=1 \
+  slave:=0 \
+  instance:=0 \
+  defaults:=$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/default_params/copter.parm,$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/default_params/dds_udp.parm \
+  sim_address:=127.0.0.1 \
+  master:=tcp:127.0.0.1:5760 \
+  sitl:=127.0.0.1:5501 \
+  out:=127.0.0.1:14550 \
+  console:=True \
+  map:=True
+  ```
+  Terminal 2: ```./QGroundControl-x86_64.AppImage``` <br/>
+  Terminal 3: Run this topic to see values are coming ```ros2 topic echo /ap/geopose/filtered```
 
 # ROS2, Ardupilot and Gazebo [Tutorial link](https://ardupilot.org/dev/docs/ros2-gazebo.html#ros2-gazebo)
 - Installing [gazebo harmonic](https://gazebosim.org/docs/harmonic/install_ubuntu/)
